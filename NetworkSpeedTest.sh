@@ -69,6 +69,14 @@ do
     esac  
 done  
 
+if [ ${#username} -lt 1 ];then
+	echo "用户名不能为空"
+	exit 1 
+elif [ ${#ip} -lt 1 ];then
+	echo "IP不能为空"
+	exit
+fi
+
 #创建需要跨域复制的测试文件
 `dd if=/dev/zero of=/tmp/zerofile bs=1M count="$b"`
 #循环复制 并进行时间计算
