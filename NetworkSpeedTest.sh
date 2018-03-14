@@ -1,7 +1,7 @@
 #! /bin/bash
 
-username="deploy"  # 用户名
-ip="127.0.0.1" # IP地址
+username=""  # 用户名
+ip="" # IP地址
 port="22"	# 端口号
 n=5   # times 
 b=20  # b M size
@@ -82,7 +82,7 @@ fi
 #循环复制 并进行时间计算
 while (( $my_times <= $n ))
 do
-echo "第$my_times次上传测试中..."
+echo "第${my_times}次上传测试中..."
 
 (time scp -P "$port" /tmp/zerofile  "$username"@"$ip":/tmp/) 2> /tmp/a.txt
 second=$(cat /tmp/a.txt | grep "real"|tail -n 1|awk '{print $2}' | awk 'BEGIN{FS="."}{print $1}' | awk 'BEGIN{FS="m"}{print $1*60+$2}')  
