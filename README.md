@@ -42,7 +42,7 @@ echo "-c 检索语句中条件变量池文件路径，条件以行区分"
 
 例如：
 ```
-sudo ./logalsearchtool.sh -p "cat /home/deploy/text.log.2018-* |grep 2018-07-01 | grep openNews"  -s "wc -l" -t /home/deploy/data/log.csv -c /home/deploy/ids.txt
+sudo ./logalsearchtool.sh -p "cat /home/deploy/text.log.2018-* |grep 2018-07-01 | grep openNews |  grep '\"channel\":\"china\"' "  -s "wc -l" -t /home/deploy/data/log.csv -c /home/deploy/ids.txt
 ```
 
 >注意
@@ -50,5 +50,7 @@ sudo ./logalsearchtool.sh -p "cat /home/deploy/text.log.2018-* |grep 2018-07-01 
 >1.此检索变量目前只支持grep，脚本中将前缀和后缀中间加了一个`| grep $cod | ` 的管道过滤。
 
 >2.此脚本需使用sudo权限执行
+
+>3.传递带`""`的参数时候需要使用转义字符`\`
 
 >3.入门练习脚本，希望大家能给予指导和批评。谢谢！
