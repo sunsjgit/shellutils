@@ -1,7 +1,7 @@
 #! /bin/bash
 
-username="deploy"  # 用户名
-ip="127.0.0.1" # IP地址
+username=""  # 用户名
+ip="" # IP地址
 port="22"	# 端口号
 n=5   # times 
 b=20  # b M size
