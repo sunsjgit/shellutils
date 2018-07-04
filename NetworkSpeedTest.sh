@@ -82,7 +82,7 @@ fi
 #循环复制 并进行时间计算
 while (( $my_times <= $n ))
 do
-echo "第$my_times次上传测试中..."
+echo "第${my_times}次上传测试中..."
 
 (time scp -P "$port" /tmp/zerofile  "$username"@"$ip":/tmp/) 2> /tmp/a.txt
 second=$(cat /tmp/a.txt | grep "real"|tail -n 1|awk '{print $2}' | awk 'BEGIN{FS="."}{print $1}' | awk 'BEGIN{FS="m"}{print $1*60+$2}')  
