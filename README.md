@@ -52,5 +52,3 @@ sudo ./logalsearchtool.sh -p "cat /home/deploy/text.log.2018-* |grep 2018-07-01 
 >2.此脚本需使用sudo权限执行
 
 >3.传递带`""`的参数时候需要使用转义字符`\`
-
->4.入门练习脚本，希望大家能给予指导和批评。谢谢！
